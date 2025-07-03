@@ -1,0 +1,189 @@
+/* Dynamic Hero Section */
+.dynamic-hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    overflow: hidden;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: -2px; /* Remove any gap between sections */
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a11 0%, #141428 50%, #1a1a30 100%);
+    z-index: -2;
+}
+
+.fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, var(--dark-bg) 100%);
+    z-index: -1;
+}
+
+.animated-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+}
+
+.shape-1 {
+    top: 20%;
+    left: 15%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--accent-blue) 0%, rgba(77, 177, 255, 0) 70%);
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape-2 {
+    bottom: 15%;
+    right: 10%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, var(--accent-purple) 0%, rgba(196, 133, 255, 0) 70%);
+    animation: float 15s infinite ease-in-out reverse;
+}
+
+.shape-3 {
+    top: 60%;
+    left: 30%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, var(--accent-pink) 0%, rgba(255, 133, 162, 0) 70%);
+    animation: float 18s infinite ease-in-out;
+    animation-delay: 5s;
+}
+
+.shape-4 {
+    top: 25%;
+    right: 25%;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, var(--accent-teal) 0%, rgba(72, 209, 204, 0) 70%);
+    animation: float 25s infinite ease-in-out;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(5%, 10%) scale(1.05);
+    }
+    50% {
+        transform: translate(10%, -5%) scale(0.95);
+    }
+    75% {
+        transform: translate(-5%, 5%) scale(1.1);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.hero-title .accent {
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.title-underline {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    margin: 1.5rem auto;
+    border-radius: 2px;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: #b8b8b8;
+    line-height: 1.8;
+    text-align: center; /* Add this line */
+    margin: 0 auto; /* Add this line */
+    /* Remove or comment out these lines:
+    position: relative;
+    left: 10%;
+    right: 50%; */
+}
+
+/* Media queries for dynamichero.css */
+@media (max-width: 768px) {
+    .dynamic-hero {
+        height: auto;
+        min-height: 60vh;
+        padding: 2rem 1.5rem;
+    }
+    
+    .fade-overlay {
+        height: 20%;
+    }
+    
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    
+    .hero-desc {
+        font-size: 1.1rem;
+        text-align: center; /* Ensure centering on mobile */
+        margin: 0 auto; /* Ensure centering on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .dynamic-hero {
+        height: auto;
+        min-height: 50vh;
+        padding: 6rem 1.5rem 3rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-desc {
+        font-size: 1rem;
+        text-align: center; /* Ensure centering on mobile */
+        margin: 0 auto; /* Ensure centering on mobile */
+    }
+}

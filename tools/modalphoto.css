@@ -1,0 +1,123 @@
+/**
+ * Photo Modal Styles
+ * 
+ * CSS for displaying images in a modal lightbox gallery view.
+ */
+
+/* Modal overlay */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal content container */
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 80vh;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* Modal image */
+.modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Close button */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+}
+
+.close-modal:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Close button X */
+.close-modal::before,
+.close-modal::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+}
+
+.close-modal::before {
+    transform: rotate(45deg);
+}
+
+.close-modal::after {
+    transform: rotate(-45deg);
+}
+
+/* Gallery item styles */
+.gallery-item, 
+.process-item, 
+.storyboard-image {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover, 
+.process-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom cursor style for gallery items (if using custom cursor) */
+body .gallery-item:hover ~ .cursor-camera,
+body .process-item:hover ~ .cursor-camera,
+body .storyboard-image:hover ~ .cursor-camera {
+    background-image: url('cursor-camera.png') !important;
+    width: 40px;
+    height: 40px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+    }
+    
+    .close-modal {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+}

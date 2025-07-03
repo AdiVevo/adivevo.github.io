@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Motion Collection</title>
+    <link rel="stylesheet" href="../tools/logo.css">
+    <link rel="stylesheet" href="../tools/cursor.css">
+    <link rel="stylesheet" href="../tools/modalphoto.css">
+    <link rel="stylesheet" href="../tools/mobile.css">
+    <link rel="stylesheet" href="videos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="animation-container" id="headerAnimationContainer"></div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <li><a href="videos.html">Stop Motion</a></li>
+                <li><a href="../NarrativeThemes/theme.html">Themed Narratives</a></li>
+                <li><a href="../index.html#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Animation Hero -->
+    <section class="animation-hero">
+        <div class="hero-background"></div>
+        <div class="animation-hero-content">
+            <h1 class="animation-title">Stop Motion Animations</h1>
+            <p class="animation-subtitle">Bringing stories to life frame by frame, creating worlds where the inanimate breathes with narrative purpose.</p>
+            
+            <div class="featured-animation">
+                <video poster="StopMotionAnimation/moon.mp4" controls>
+                    <source src="StopMotionAnimation/moon.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+    </section>
+
+
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="close-modal"></div>
+        <div class="modal-content">
+            <video class="modal-video" controls>
+                <source src="#" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- The modal-image will be added dynamically via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot" style="width: 80px; height: 80px;"></div>
+    <div class="cursor-camera" style="width: 80px; height: 80px;"></div>
+    <!-- Interactive Timeline -->
+    <section class="timeline-section">
+        <h2 class="section-title">Animation Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-video="StopMotionAnimation/car.mp4">
+                <div class="timeline-content">
+                    <div class="timeline-media">
+                        <img src="StopMotionAnimation/carthumbnail.png" alt="Latest Project" class="timeline-img">
+                        <div class="timeline-play-btn"></div>
+                    </div>
+                    <h3 class="timeline-title">Drifting</h3>
+                    <div class="timeline-date">February 2022</div>
+                    <p class="timeline-text">A fun animation practice with a hot wheel car.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-video="StopMotionAnimation/O2.mp4">
+                <div class="timeline-content">
+                    <div class="timeline-media">
+                        <img src="StopMotionAnimation/o2.png" alt="First Animation" class="timeline-img">
+                        <div class="timeline-play-btn"></div>
+                    </div>
+                    <h3 class="timeline-title">O2</h3>
+                    <div class="timeline-date">March 2023</div>
+                    <p class="timeline-text">O2 is a poem I wrote in high school. I wanted to create a visualizer for it. I used plastacine clay and paper. The poem reads: "Our oxygen was cut short, limited to a single breath- then I saw you. We let go of the Carbon ties of the past. Inhale- we inhale together. Finally, we became O2."</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-video="StopMotionAnimation/ThesoundsOfNature.mp4">
+                <div class="timeline-content">
+                    <div class="timeline-media">
+                        <img src="StopMotionAnimation/thesoundofmusic.png" alt="Commercial Project" class="timeline-img">
+                        <div class="timeline-play-btn"></div>
+                    </div>
+                    <h3 class="timeline-title">The Sound of Nature</h3>
+                    <div class="timeline-date">July 2023</div>
+                    <p class="timeline-text">Stop motion animation focused on natural elements and effects.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-video="StopMotionAnimation/mrpops.mp4">
+                <div class="timeline-content">
+                    <div class="timeline-media">
+                        <img src="StopMotionAnimation/mrpops.png" alt="Festival Entry" class="timeline-img">
+                        <div class="timeline-play-btn"></div>
+                    </div>
+                    <h3 class="timeline-title">Mr Pop's Red Flower</h3>
+                    <div class="timeline-date">October 2023</div>
+                    <p class="timeline-text">On a walk by the river, Mr. Pop discovers a red flower! This was a project for my advanced stop motion class. I learned to operate the Dragon Frame Volo Motion Control Rig and incorporated flowing water effects and a walk cycle. The puppet was made from aluminum foil, wires, epoxy for reinforcement, and plasticine clay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Video Wall -->
+    <section class="video-wall">
+        <h2 class="section-title">Animation Gallery</h2>
+        <div class="video-grid">
+            <div class="video-item" data-video="StopMotionAnimation/walkcycle.mov">
+                <div class="video-thumbnail">
+                    <img src="StopMotionAnimation/walkingcycle.png" alt="Urban Dreams">
+                </div>
+                <div class="video-caption">
+                    <h3 class="video-title">Mr.Pops Walk</h3>
+                    <p class="video-details">2023 • 0:08</p>
+                </div>
+            </div>
+            <div class="video-item" data-video="StopMotionAnimation/Hand_final.mov">
+                <div class="video-thumbnail">
+                    <img src="StopMotionAnimation/handthumpnail.png" alt="Midnight Café">
+                </div>
+                <div class="video-caption">
+                    <h3 class="video-title">Hand Animation</h3>
+                    <p class="video-details">2023 • 0:11</p>
+                </div>
+            </div>
+            <div class="video-item" data-video="StopMotionAnimation/Practice.mp4">
+                <div class="video-thumbnail">
+                    <img src="StopMotionAnimation/practice.png" alt="Between Worlds">
+                </div>
+                <div class="video-caption">
+                    <h3 class="video-title">Character Movement</h3>
+                    <p class="video-details">2023 • 0:04</p>
+                </div>
+            </div>
+            <div class="video-item" data-video="StopMotionAnimation/Fire.mp4">
+                <div class="video-thumbnail">
+                    <img src="StopMotionAnimation/firethumbnail.png" alt="Vibrant City">
+                </div>
+                <div class="video-caption">
+                    <h3 class="video-title">Bonfire</h3>
+                    <p class="video-details">Personal Project, 2024 • 0:03</p>
+                </div>
+            </div>
+        </div>
+    </section>
+            <!-- Behind the Scenes -->
+    <section class="behind-scenes">
+        <h2 class="section-title">Behind the Scenes</h2>
+        <div class="process-gallery">
+            <div class="process-item">
+                <img src="StopMotionAnimation/Set Building_pics/stand.jpg" alt="Character Development">
+                <div class="process-overlay">
+                </div>
+            </div>
+            <div class="process-item">
+                <img src="StopMotionAnimation/Set Building_pics/media(2).jpg" alt="Set Construction">
+                <div class="process-overlay">
+                </div>
+            </div>
+            <div class="process-item">
+                <img src="StopMotionAnimation/Set Building_pics/set3.jpg" alt="Lighting Setup">
+                <div class="process-overlay">
+                </div>
+            </div>
+            <div class="process-item">
+                <img src="StopMotionAnimation/Set Building_pics/Beach1.jpg" alt="Animation Process">
+                <div class="process-overlay">
+                </div>
+            </div>
+            <div class="process-item">
+                <img src="StopMotionAnimation/Set Building_pics/SetMockup.jpg" alt="Post-Production">
+                <div class="process-overlay">
+                </div>
+            </div>
+            <div class="process-item">
+                <img src="StopMotionAnimation/Set Building_pics/Mrpopset1.jpg" alt="MACA">
+                <div class="process-overlay">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="social-rolling-bar">
+            <div class="social-container">
+                <a href="https://www.instagram.com/ajoyfru/" class="social-link"><i class="social-icon instagram"></i>This Is The HyperLink That You Can Press To Access The Instagram That I Post Digital And Physical Media That I Create</a>
+                <a href="https://youtube.com/@asterinjoy" class="social-link"><i class="social-icon youtube"></i>This Is The HyperLink That You Can Press To Be Sent Via the Internet Super Highway To The Youtube That I Post Media That Has More Than One Frame In It That I Create</a>
+                <a href="https://www.instagram.com/ajoyfru/" class="social-link"><i class="social-icon instagram"></i>This Is The HyperLink That You Can Press To Access The Instagram That I Post Digital And Physical Media That I Create</a>
+                <a href="https://youtube.com/@asterinjoy" class="social-link"><i class="social-icon youtube"></i>This Is The HyperLink That You Can Press To Be Sent Via the Internet Super Highway To The Youtube That I Post Media That Has More Than One Frame In It That I Create</a>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div style="text-align: center;">
+                <div class="animation-container" id="footerAnimationContainer"></div>
+            </div>
+            <p>Exploring visual narratives since 2022</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="https://trailanomaly.baby">Web Master</a>
+                <a href="../404.html">Contact</a>
+                <a href="#">Up To Top</a>
+            </div>
+            <a href="https://nightshade.cs.uchicago.edu/whatis.html"> Protected By Nightshade and Glaze.</a>
+        </div>
+    </footer>
+    <!--  JS IMPORTS  -->
+    <script src="../tools/cursor.js"></script>
+    <script src="../tools/logo.js"></script>
+    <script src="../tools/mobile.js"></script>
+    <script src="../tools/modalphoto.js"></script>
+    <script src="videos.js"></script>
+</body>
+</html>
+
+

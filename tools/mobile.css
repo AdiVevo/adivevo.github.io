@@ -1,0 +1,556 @@
+/* ==============================================
+   MOBILE STYLES - mobile-styles.css
+   Include this file in all your HTML pages
+   ============================================== */
+
+/* DISABLE CUSTOM CURSOR ON TOUCH DEVICES */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-dot,
+    .cursor-camera {
+        display: none !important;
+    }
+    
+    /* Reset cursor for all elements on touch devices */
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* MOBILE HEADER FIXES - Auto-hiding header on scroll */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        min-height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+        z-index: 100;
+        background-color: rgba(17, 17, 17, 0.98) !important;
+        backdrop-filter: blur(15px);
+    }
+    
+    /* Hide header when scrolling down, show when scrolling up */
+    header.header-hidden {
+        transform: translateY(-100%);
+    }
+    
+    .animation-container {
+        height: 50px;
+        width: 280px;
+        margin-right: 15px;
+    }
+    
+    .letter {
+        font-size: 2.5rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin-left: 0.8rem;
+        margin-right: 0.2rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 0.8rem 1rem;
+        text-align: center;
+        gap: 0.8rem;
+        min-height: 100px;
+    }
+    
+    .animation-container {
+        height: 40px;
+        width: 200px;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .letter {
+        font-size: 2rem;
+    }
+    
+    nav {
+        width: 100%;
+    }
+    
+    nav ul {
+        justify-content: center;
+        margin: 0;
+        gap: 0.3rem;
+    }
+    
+    nav ul li {
+        margin: 0 0.3rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.2rem;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Reduce hero section margins since header hides on scroll */
+    .animation-hero,
+    .dynamic-hero {
+        margin-top: 80px; /* Reduced since header hides */
+        padding-top: 2rem;
+    }
+    
+    .collection-hero {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 360px) {
+    .animation-container {
+        height: 35px;
+        width: 180px;
+    }
+    
+    .letter {
+        font-size: 1.8rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.1rem;
+    }
+    
+    .animation-hero,
+    .dynamic-hero {
+        margin-top: 70px; /* Further reduced */
+    }
+}
+
+/* TOUCH TARGET IMPROVEMENTS */
+@media (max-width: 768px) {
+    .filter-btn,
+    .tab-btn,
+    .filter-button,
+    .close-modal,
+    .slider-arrow,
+    .slider-dot,
+    .control-button,
+    .frame-control-button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.8rem 1rem;
+        margin: 0.3rem;
+    }
+    
+    .gallery-item,
+    .tab-item,
+    .collection,
+    .video-item,
+    .timeline-item,
+    .process-item {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+/* TYPOGRAPHY IMPROVEMENTS */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .hero-title,
+    .animation-title,
+    .collection-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .hero-desc,
+    .animation-subtitle,
+    .collection-desc,
+    .storyboard-text,
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .gallery-meta,
+    .video-details,
+    .timeline-date {
+        font-size: 0.9rem;
+    }
+}
+
+/* MODAL IMPROVEMENTS */
+@media (max-width: 768px) {
+    .modal,
+    .video-modal {
+        padding: 1rem;
+    }
+    
+    .modal-content,
+    .video-modal-content {
+        width: 95% !important;
+        max-width: 95% !important;
+        margin: 0;
+    }
+    
+    .modal-image {
+        max-height: 70vh;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    .video-container {
+        height: 250px !important;
+    }
+    
+    .close-modal,
+    .close-video-modal {
+        top: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* VIDEO IMPROVEMENTS */
+@media (max-width: 768px) {
+    .featured-animation video,
+    .modal-video {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
+    
+    .video-thumbnail,
+    .slide-thumbnail,
+    .timeline-media {
+        aspect-ratio: 16/9;
+        min-height: 180px;
+    }
+    
+    .featured-play-button,
+    .slide-play-button,
+    .timeline-play-btn {
+        width: 60px;
+        height: 60px;
+        opacity: 1 !important;
+    }
+}
+
+/* SOCIAL BAR IMPROVEMENTS */
+@media (max-width: 768px) {
+    .social-rolling-bar {
+        height: auto;
+        min-height: 60px;
+        padding: 0.5rem 0;
+    }
+    
+    .social-link {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        padding: 0.5rem 1rem;
+        height: auto;
+        min-height: 60px;
+        white-space: normal;
+        word-break: break-word;
+    }
+    
+    .social-container {
+        animation-duration: 45s;
+    }
+}
+
+/* GALLERY IMPROVEMENTS - 2 columns on mobile */
+@media (max-width: 768px) {
+    .gallery-masonry,
+    .tab-gallery,
+    .collections,
+    .process-gallery,
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 columns instead of 1 */
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .gallery-item,
+    .tab-item {
+        height: 200px; /* Smaller height to fit 2 per row */
+        margin-bottom: 1rem;
+    }
+    
+    /* Make sure text is still readable in smaller items */
+    .gallery-info h3,
+    .collection-info h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .gallery-info p,
+    .collection-info p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+    
+    .gallery-meta {
+        font-size: 0.7rem;
+    }
+    
+    /* Make gallery info always visible on mobile */
+    .gallery-info,
+    .gallery-overlay,
+    .process-overlay {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-masonry,
+    .tab-gallery,
+    .collections,
+    .process-gallery,
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        padding: 0 0.8rem;
+    }
+    
+    .gallery-item,
+    .tab-item {
+        height: 180px; /* Even smaller for very small screens */
+    }
+    
+    /* Optionally hide description text on very small screens */
+    .gallery-info p:not(.gallery-meta),
+    .collection-info p {
+        display: none; /* Only show title and meta info */
+    }
+}
+
+/* TIMELINE IMPROVEMENTS */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 1rem;
+    }
+    
+    .timeline::after {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 60px;
+        padding-right: 20px;
+        margin-bottom: 2rem;
+    }
+    
+    .timeline-item::after {
+        left: 10px !important;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    .timeline-media {
+        height: 200px;
+        margin-bottom: 1rem;
+    }
+}
+
+/* SLIDER IMPROVEMENTS */
+@media (max-width: 768px) {
+    .storyboard-slider,
+    .slideshow-container {
+        margin: 0 -1rem;
+    }
+    
+    .slider-arrows {
+        padding: 0 2rem;
+    }
+    
+    .slider-arrow,
+    .slide-prev,
+    .slide-next {
+        width: 44px;
+        height: 44px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .slider-controls,
+    .slideshow-nav {
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .slider-dot,
+    .dot {
+        width: 14px;
+        height: 14px;
+        margin: 0 8px;
+    }
+}
+
+/* FORM IMPROVEMENTS */
+@media (max-width: 768px) {
+    input,
+    button,
+    textarea,
+    select {
+        font-size: 16px;
+        -webkit-appearance: none;
+        border-radius: 4px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .newsletter-input {
+        width: 100%;
+        min-height: 44px;
+        padding: 1rem;
+    }
+    
+    .newsletter-btn {
+        width: 100%;
+        min-height: 44px;
+        padding: 1rem;
+    }
+}
+
+/* SPACING IMPROVEMENTS */
+@media (max-width: 768px) {
+    .photo-gallery,
+    .featured-collection,
+    .photo-groupings,
+    .collection-gallery,
+    .timeline-section,
+    .behind-scenes,
+    .video-wall,
+    .featured,
+    .about {
+        padding: 3rem 1.5rem;
+    }
+    
+    .dynamic-hero,
+    .animation-hero {
+        padding: 2rem 1.5rem;
+        min-height: 60vh;
+    }
+    
+    .section-title {
+        margin-bottom: 2rem;
+    }
+    
+    .filter-bar,
+    .tab-headers {
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+/* PERFORMANCE IMPROVEMENTS */
+@media (max-width: 768px) {
+    .shape {
+        animation: none !important;
+    }
+    
+    .gallery-item img,
+    .tab-item img,
+    .collection img {
+        transition: transform 0.2s ease;
+    }
+    
+    .gallery-item:hover img,
+    .tab-item:hover img,
+    .collection:hover img {
+        transform: scale(1.02);
+    }
+}
+
+/* ACCESSIBILITY IMPROVEMENTS */
+@media (max-width: 768px) {
+    a:focus,
+    button:focus,
+    .gallery-item:focus,
+    .video-item:focus {
+        outline: 2px solid #4db1ff;
+        outline-offset: 2px;
+    }
+    
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #000;
+        color: #fff;
+        padding: 8px;
+        text-decoration: none;
+        z-index: 9999;
+    }
+    
+    .skip-link:focus {
+        top: 6px;
+    }
+}
+
+/* GENERAL MOBILE OPTIMIZATIONS */
+@media (max-width: 768px) {
+    .gallery-info,
+    .video-caption,
+    .timeline-content {
+        -webkit-user-select: text;
+        user-select: text;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    img {
+        loading: lazy;
+    }
+    
+    .gallery-item img,
+    .tab-item img,
+    .collection img {
+        object-fit: cover;
+        background-color: #222;
+    }
+}

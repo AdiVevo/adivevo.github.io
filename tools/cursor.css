@@ -1,0 +1,79 @@
+/* Custom Cursor Styles */
+body {
+    cursor: none; /* Hide the default cursor */
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-image: url('Ilustracion_sin_titulopointer.png');
+    border-radius: 50%;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cursor-camera {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    background-image: url('Ilustracion_sin_titulopointer.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease;
+}
+
+/* Click state */
+.cursor-camera.click {
+    transform: translate(-50%, -50%) scale(0.9) rotate(-5deg);
+}
+
+.cursor-dot.click {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-image: url('Ilustracion_sin_titulopointer.png');
+    width: 80px;
+    height: 80px;
+}
+
+/* Hover state for interactive elements */
+a:hover ~ .cursor-dot,
+button:hover ~ .cursor-dot,
+.slider-arrow:hover ~ .cursor-dot,
+.slider-dot:hover ~ .cursor-dot,
+.gallery-item:hover ~ .cursor-dot,
+.collection:hover ~ .cursor-dot,
+.filter-button:hover ~ .cursor-dot {
+    background-image: url('Ilustracion_sin_titulopointer.png');
+    width: 40px;
+    height: 40px;
+}
+
+a:hover ~ .cursor-camera,
+button:hover ~ .cursor-camera,
+.slider-arrow:hover ~ .cursor-camera,
+.slider-dot:hover ~ .cursor-camera,
+.gallery-item:hover ~ .cursor-camera,
+.collection:hover ~ .cursor-camera,
+.filter-button:hover ~ .cursor-camera {
+    background-image: url('Ilustracion_sin_titulopointer.png');
+    width: 40px;
+    height: 40px;
+}
+
+/* Special camera cursor for media items */
+body .gallery-item:hover ~ .cursor-camera,
+body .storyboard-image:hover ~ .cursor-camera,
+body .video-thumbnail:hover ~ .cursor-camera {
+    background-image: url('cursor-camera.png') !important; /* Use regular camera, not glove */
+    width: 40px;
+    height: 40px;
+}

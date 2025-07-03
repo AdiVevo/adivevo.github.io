@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Collection Gallery</title>
+    <link rel="stylesheet" href="../tools/logo.css">
+    <link rel="stylesheet" href="../tools/cursor.css">
+    <link rel="stylesheet" href="../tools/modalphoto.css">
+    <link rel="stylesheet" href="../tools/mobile.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Inline CSS fix for modal positioning */
+        .video-modal {
+            position: fixed !important;z-index: 9999 !important;
+            top: 0;left: 0;right: 0;bottom: 0;opacity: 0;
+            background-color: rgba(0, 0, 0, 0.95);transition: all 0.3s ease;
+            display: flex;justify-content: center;align-items: center;visibility: hidden;
+        }
+        body {display: flex;flex-direction: column;min-height: 100vh;}
+        main {flex: 1;display: flex;flex-direction: column;}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="animation-container" id="headerAnimationContainer"></div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="../stopmotion/videos.html">Stop Motion</a></li>
+                <li><a href="../NarrativeThemes/theme.html">Themed Narratives</a></li>
+                <li><a href="../index.html#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content wrapper -->
+    <main>
+        <!-- Dynamic Hero Section -->
+        <section class="dynamic-hero">
+            <div class="hero-bg">
+                <div class="animated-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+                <div class="fade-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Photo <span class="accent">Gallery</span></h1>
+                <div class="title-underline"></div>
+                <p class="hero-desc">Visual explorations across different themes, mediums, and moments - each telling its own story.</p>
+            </div>
+        </section>
+        
+        <!-- First Groupings Section: Project Collections -->
+        <section class="photo-groupings themed-section">
+            <h2 class="section-title">Project Collections</h2>
+            
+            <div class="collection-tabs">
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-tab="medusa">Medusa Mar</button>
+                    <button class="tab-btn" data-tab="swanlake">Swan Lake</button>
+                    <button class="tab-btn" data-tab="haunted">Haunted House</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-panel active" id="medusa">
+                        <div class="tab-info">
+                            <h3>Medusa Mar</h3>
+                            <p>For an Illustration foundation class, we had to create an anthropomorphic character. I selected a Jellyfish. I created Medusa Mar, a 23-year-old watercolor painter who enjoys reading and relaxing on her days off.</p>
+                        </div>
+                        <div class="tab-gallery">
+                            <div class="tab-item">
+                                <img src="MedusaMar/pic0.png" alt="Medusa Mar Study 1">
+                            </div>
+                            <div class="tab-item">
+                                <img src="MedusaMar/Medusaaudiobook.jpg" alt="Medusa Mar Study 2">
+                            </div>
+                            <div class="tab-item">
+                                <img src="MedusaMar/Medusa_Mar_Andrea_Juarez.jpg" alt="Medusa Mar Study 3">
+                            </div>
+                            <div class="tab-item">
+                                <img src="MedusaMar/Ansdreajuarezmedusaobjects.jpg" alt="Medusa Mar Study 4">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="swanlake">
+                        <div class="tab-info">
+                            <h3>Swan Lake</h3>
+                            <p>Visual investigations of visual elements of the swan lake story as a horror zombie tragedy.</p>
+                        </div>
+                        <div class="tab-gallery">
+                            <div class="tab-item">
+                                <img src="SwanLakeZombieconceptart/JuarezAndrea_Swanlake_Room.PNG" alt="Swan Lake Study 1">
+                            </div>
+                            <div class="tab-item">
+                                <img src="SwanLakeZombieconceptart/IMG_1612.PNG" alt="Swan Lake Study 2">
+                            </div>
+                            <div class="tab-item">
+                                <img src="SwanLakeZombieconceptart/JuarezAndrea_Prop2.PNG" alt="Swan Lake Study 3">
+                            </div>
+                            <div class="tab-item">
+                                <img src="SwanLakeZombieconceptart/IMG_1611.PNG" alt="Swan Lake Study 4">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="haunted">
+                        <div class="tab-info">
+                            <h3>Haunted House</h3>
+                            <p>Through various character designs and environmental explorations I dive into what it means to be a scare actor.</p>
+                        </div>
+                        <div class="tab-gallery">
+                            <div class="tab-item">
+                                <img src="HauntedHouseSeriespitch/IMG_1498 2.PNG" alt="Haunted House Study 1">
+                            </div>
+                            <div class="tab-item">
+                                <img src="HauntedHouseSeriespitch/IMG_1500 2.PNG" alt="Haunted House Study 2">
+                            </div>
+                            <div class="tab-item">
+                                <img src="HauntedHouseSeriespitch/IMG_1511 2.PNG" alt="Haunted House Study 3">
+                            </div>
+                            <div class="tab-item">
+                                <img src="HauntedHouseSeriespitch/IMG_1460.PNG" alt="Haunted House Study 4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Main Gallery Section -->
+        <section class="photo-gallery">
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="abstract">Portraits</button>
+                <button class="filter-btn" data-filter="urban">Drawings</button>
+                <button class="filter-btn" data-filter="portraits">Photography</button>
+                <button class="filter-btn" data-filter="landscapes">Random</button>
+            </div>
+
+            <div class="gallery-masonry">
+                <!-- Photography Category -->
+                <div class="gallery-item portraits">
+                    <img src="Photography_Filmatography/media (4).jpg" alt="Portrait Study">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">With All The Colors of My Heart</h3>
+                        <div class="gallery-meta"><span class="year">Chicago, 2022</span><span class="medium">Canon EOS Rebel T</span></div>
+                    </div>
+                </div>
+                <div class="gallery-item portraits">
+                    <img src="Photography_Filmatography/media.jpg" alt="Raspados y Las Hermanas ">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Raspados y Las Hermanas </h3>
+                        <div class="gallery-meta"><span class="year">2023</span><span class="medium">Digital Photography</span></div>
+                    </div>
+                </div>
+                <div class="gallery-item portraits">
+                    <img src="Photography_Filmatography/media (5).jpg" alt="Expressive Portrait">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Chicago's Pride</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Digital Photography</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item portraits">
+                    <img src="Photography_Filmatography/ElCastillo.JPG" alt="Expressive Portrait">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Sight to God</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Digital Photography</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item portraits">
+                    <img src="Photography_Filmatography/gossipinournailpolish.jpg" alt="Gossip in Our Nail Polish ">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Gossip in Our Nail Polish</h3>
+                        <div class="gallery-meta">
+                            <span class="year">Chicago, Illinois, 2022</span>
+                            <span class="medium">Harman Film Camera</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Random Category -->
+                <div class="gallery-item landscapes">
+                    <img src="randomdrawings/IMG_0249.PNG" alt="Coastal View">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Aged Ceramic</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item landscapes">
+                    <img src="SwanLakeZombieconceptart/IMG_1609.PNG" alt="Mountain Range">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Revived Swan</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item landscapes">
+                    <img src="HauntedHouseSeriespitch/mona reg.png" alt="Forest Path">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Mona Reg</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item landscapes">
+                    <img src="HauntedHouseSeriespitch/IMG_1425 2.PNG" alt="Forest Path">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Scare Actor</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item landscapes">
+                    <img src="HauntedHouseSeriespitch/IMG_1494 2.PNG" alt="Forest Path">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Shattering Dream</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item landscapes">
+                    <img src="HauntedHouseSeriespitch/IMG_1493 2.PNG" alt="Forest Path">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Frantic Scav</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Abstract Category -->
+                <div class="gallery-item abstract">
+                    <img src="randomdrawings/IMG_1049.jpg" alt="Color Study">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Readers Glanse</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Digital Illustration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item abstract">
+                    <img src="randomdrawings/IMG_2822.jpg" alt="Geometric Forms">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Walking Art</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Mixed Media</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item abstract">
+                    <img src="randomdrawings/alienautotune.jpg" alt="Light Patterns">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Alien Autotune</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item abstract">
+                    <img src="randomdrawings/rosethought.jpg" alt="Abstract Forms">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Rose Thoughts</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item abstract">
+                    <img src="randomdrawings/Untitled_Artwork.png" alt="Colorful Composition">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Laugh</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Urban Category -->
+                <div class="gallery-item urban">
+                    <img src="figuredrawings/IMG_8232.jpg" alt="City Streets">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Hidden Side</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Sketching</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item urban">
+                    <img src="figuredrawings/IMG_8898.jpeg" alt="Urban Cafe">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Head in the Galaxies</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Sketching</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item urban">
+                    <img src="figuredrawings/IMG_6925.jpeg" alt="Urban Cafe">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Unhooded Charon</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2023</span>
+                            <span class="medium">Sketching</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item urban">
+                    <img src="figuredrawings/IMG_6890.JPG" alt="Night Architecture">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Worried Tought</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Sketching</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item urban">
+                    <img src="figuredrawings/IMG_6889.JPG" alt="Night Architecture">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">Grim Reflection</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Sketching</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item urban">
+                    <img src="figuredrawings/492C0580-D41D-4F26-A8C7-DB12C4D2FC5B.jpg" alt="Night Architecture">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">The Rainbow Lining</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Sketching</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item urban">
+                    <img src="figuredrawings/IMG_8231.jpg" alt="Night Architecture">
+                    <div class="gallery-info">
+                        <h3 class="gallery-title">By Body By Ground</h3>
+                        <div class="gallery-meta">
+                            <span class="year">2024</span>
+                            <span class="medium">Sketching</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Video Section -->
+        <section class="featured-video-section alt-section">
+            <h2 class="section-title">Featured Video</h2>
+            <p class="section-desc">Highlighting my latest creative exploration in motion</p>
+            
+            <div class="featured-video-container">
+                <div class="featured-video-wrapper">
+                    <div class="featured-video-thumbnail">
+                        <img src="Photography_Filmatography/thumbnail.png" alt="Featured Video Thumbnail">
+                        <div class="featured-play-button">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="featured-video-duration">2:30</div>
+                    </div>
+                    <video class="hidden-video" preload="none">
+                        <source src="Photography_Filmatography/VIDEO-2024-11-15-07-14-40.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="featured-video-info">
+                    <h3 class="featured-video-title">Americana Extranjera</h3>
+                    <p class="featured-video-desc">My film is inspired by three key sources: Sky Hopinka’s Kicking the Clouds, Colectivo Los Ingrávidos, and Sammy Baloji’s AEQUARE: The Future That Never Was. It is a personal exploration of identity, focusing on the sense of division felt by many Mexican Americans; being born in the United States yet feeling homesick for Mexico.</p>
+                    <div class="featured-video-meta">
+                        <span class="featured-video-category">Film</span>
+                        <span class="featured-video-date">2024</span>
+                    </div>
+                    <button class="watch-button">
+                        Watch Now
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Slideshow Section -->
+        <section class="video-slideshow-section themed-section">
+            <h2 class="section-title">Animations</h2>
+            <p class="section-desc">A curated selection of my motion projects</p>
+            
+            <div class="slideshow-container">
+                <div class="slides-wrapper">
+                    <div class="slides-track">
+                        <!-- Slide 1 -->
+                        <div class="video-slide">
+                            <div class="slide-thumbnail">
+                                <img src="2danimation/boo.png" alt="Urban Dreams">
+                                <div class="slide-play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="slide-video-duration">2:15</div>
+                            </div>
+                            <div class="slide-info">
+                                <h3 class="slide-title">Boo Box</h3>
+                                <p class="slide-meta">Animation • 2023</p>
+                            </div>
+                            <video class="hidden-video" preload="none">
+                                <source src="2danimation/boo.mov" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="video-slide">
+                            <div class="slide-thumbnail">
+                                <img src="2danimation/kiwi.png" alt="Nature's Symphony">
+                                <div class="slide-play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="slide-video-duration">1:45</div>
+                            </div>
+                            <div class="slide-info">
+                                <h3 class="slide-title">Kiwi Home</h3>
+                                <p class="slide-meta">Animation • 2023</p>
+                            </div>
+                            <video class="hidden-video" preload="none">
+                                <source src="2danimation/kiwi.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="video-slide">
+                            <div class="slide-thumbnail">
+                                <img src="2danimation/tetris.png" alt="Walking Cycle">
+                                <div class="slide-play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="slide-video-duration">0:45</div>
+                            </div>
+                            <div class="slide-info">
+                                <h3 class="slide-title">Tetris</h3>
+                                <p class="slide-meta">Animation • 2024</p>
+                            </div>
+                            <video class="hidden-video" preload="none">
+                                <source src="2danimation/tetris.mp4" type="video/quicktime">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Slide 4 -->
+                        <div class="video-slide">
+                            <div class="slide-thumbnail">
+                                <img src="2danimation/2dwalkin.png" alt="Hand Study">
+                                <div class="slide-play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="slide-video-duration">1:30</div>
+                            </div>
+                            <div class="slide-info">
+                                <h3 class="slide-title">Walking Cycle</h3>
+                                <p class="slide-meta">Animation • 2023</p>
+                            </div>
+                            <video class="hidden-video" preload="none">
+                                <source src="2danimation/walkin.mp4" type="video/quicktime">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Slide 5 -->
+                        <div class="video-slide">
+                            <div class="slide-thumbnail">
+                                <img src="2danimation/happy15.png" alt="Light Study">
+                                <div class="slide-play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="slide-video-duration">2:05</div>
+                            </div>
+                            <div class="slide-info">
+                                <h3 class="slide-title">Happy 15th</h3>
+                                <p class="slide-meta">Animation • 2024</p>
+                            </div>
+                            <video class="hidden-video" preload="none">
+                                <source src="2danimation/happy15.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slideshow Navigation -->
+                <div class="slideshow-nav">
+                    <button class="slide-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="slideshow-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                    <button class="slide-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Second Groupings Section: Medium Collections -->
+        <section class="photo-groupings alt-section">
+            <h2 class="section-title">Medium Collections</h2>
+            
+            <div class="collection-tabs" id="medium-tabs">
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-tab="photography">Photography</button>
+                    <button class="tab-btn" data-tab="handwork">Hand Work</button>
+                    <button class="tab-btn" data-tab="anatomy">Anatomy</button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- Photography -->
+                    <div class="tab-panel active" id="photography">
+                        <div class="tab-info">
+                            <h3>Photography</h3>
+                            <p>Figure drawing studies and class work.</p>
+                        </div>
+                        <div class="tab-gallery">
+                            <div class="tab-item"><img src="Photography_Filmatography/DeColores.JPG" alt="Photography Study 1"></div>
+                            <div class="tab-item"><img src="Photography_Filmatography/LadyInRed.JPG" alt="Photography Study 2"></div>
+                            <div class="tab-item"><img src="Photography_Filmatography/LosCorazones.JPG" alt="Photography Study 3"></div>
+                            <div class="tab-item"><img src="Photography_Filmatography/MadreNuestra.JPG" alt="Photography Study 4"></div>
+                            <div class="tab-item"><img src="Photography_Filmatography/media (6).jpg" alt="Photography Study 5"></div>
+                        </div>
+                    </div>
+                    <!-- Hand Work -->
+                    <div class="tab-panel" id="handwork">
+                        <div class="tab-info">
+                            <h3>Hand Work</h3>
+                            <p> Figure drawing practice.</p>
+                        </div>
+                        <div class="tab-gallery">
+                            <div class="tab-item"><img src="figuredrawings/IMG_7271.jpeg" alt="Hand Work Study 1"></div>
+                            <div class="tab-item"><img src="figuredrawings/Hand_Practice_.png" alt="Hand Work Study 2"></div>
+                            <div class="tab-item"><img src="figuredrawings/Hand_practice_Pt.2.png" alt="Hand Work Study 3"></div>
+                            <div class="tab-item"><img src="figuredrawings/IMG_7272.jpeg" alt="Hand Work Study 4"></div>
+                            <div class="tab-item"><img src="figuredrawings/media.png" alt="Hand Work Study 5"></div>
+                        </div>
+                    </div>
+                    <!-- Anatomy -->
+                    <div class="tab-panel" id="anatomy">
+                        <div class="tab-info">
+                            <h3>Anatomy</h3>
+                            <p>Figure drawing studies and class work.</p>
+                        </div>
+                        <div class="tab-gallery">
+                            <div class="tab-item"><img src="figuredrawings/IMG_8176.jpeg" alt="Anatomy Study 1"></div>
+                            <div class="tab-item"><img src="figuredrawings/IMG_8177.jpeg" alt="Anatomy Study 2"></div>
+                            <div class="tab-item"><img src="figuredrawings/IMG_6925.jpeg" alt="Anatomy Study 3"></div>
+                            <div class="tab-item"><img src="figuredrawings/IMG_7269 (1).jpeg" alt="Anatomy Study 4"></div>
+                            <div class="tab-item"><img src="figuredrawings/IMG_7268.jpeg" alt="Anatomy Study 4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals - placed after main but before footer -->
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <div class="close-modal"></div>
+        <div class="modal-content">
+            <!-- The modal-image will be added dynamically via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Video Modal - removed from HTML since we create it using JavaScript -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-rolling-bar">
+            <div class="social-container">
+                <a href="https://www.instagram.com/ajoyfru/" class="social-link"><i class="social-icon instagram"></i>This Is The HyperLink That You Can Press To Access The Instagram That I Post Digital And Physical Media That I Create</a>
+                <a href="https://youtube.com/@asterinjoy" class="social-link"><i class="social-icon youtube"></i>This Is The HyperLink That You Can Press To Be Sent Via the Internet Super Highway To The Youtube That I Post Media That Has More Than One Frame In It That I Create</a>
+                <a href="https://www.instagram.com/ajoyfru/" class="social-link"><i class="social-icon instagram"></i>This Is The HyperLink That You Can Press To Access The Instagram That I Post Digital And Physical Media That I Create</a>
+                <a href="https://youtube.com/@asterinjoy" class="social-link"><i class="social-icon youtube"></i>This Is The HyperLink That You Can Press To Be Sent Via the Internet Super Highway To The Youtube That I Post Media That Has More Than One Frame In It That I Create</a>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div style="text-align: center;">
+                <div class="animation-container" id="footerAnimationContainer"></div>
+            </div>
+            <p>Exploring visual narratives since 2022</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="https://trailanomaly.baby">Web Master</a>
+                <a href="../404.html">Contact</a>
+                <a href="#">Up To Top</a>
+            </div>
+            <a href="https://nightshade.cs.uchicago.edu/whatis.html"> Protected By Nightshade and Glaze.</a>
+        </div>
+    </footer>
+
+    <!-- JS Imports -->
+    <script src="../tools/logo.js"></script>
+    <script src="../tools/cursor.js"></script>
+    <script src="../tools/modalphoto.js"></script>
+    <script src="../tools/mobile.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>
